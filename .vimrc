@@ -1,7 +1,7 @@
 set number
 
 set shiftwidth=4
-set tabstop =4
+set tabstop=4
 
 set cursorline
 
@@ -27,7 +27,7 @@ let g:tex_flavor='latex'
 syntax on
 
 let g:Tex_DefaultTargetFormat='pdf'
-let g:Tex_ViewRule_pdf='evince'
+let g:Tex_ViewRule_pdf='open'
 let g:Tex_MultipleCompileFormats='dvi,pdf'
 
 let Tex_FoldedSections=""
@@ -36,3 +36,16 @@ let Tex_FoldedMisc=""
 
 imap <F4> <esc>
 map <F4> :w <CR><leader>ll <leader> lv
+
+command Fname echo @%
+
+map <F6> :w!<CR>:!aspell check %<CR>:e! %<CR>
+"colorscheme desert
+"colorscheme deus
+colorscheme apprentice
+" use the option below for active spellcheck
+"set spell spelllang=en_us
+
+if &diff
+    colorscheme apprentice
+endif
